@@ -1,19 +1,33 @@
-// Calculator Program Start
 
-let display = document.getElementById("display");
 
-function appendToDisplay(input){
-  display.value += input;
-}
-function clearDisplay(){
-  display.value= "";
+const display = document.getElementById("display");
+const operators = ["+", "-", "*", "/"];
 
-}
-function calculate(){
-  try{
-    display.value = eval(display.value);
+function appendToDisplay(value) {
+  const lastChar = display.value.slice(-1);
+
+
+  if (operators.includes(value) && operators.includes(lastChar)) {
+    return;
   }
-  catch(error){
-    display.value = "error";
+
+  display.value += value;
+}
+
+function clearDisplay() {
+  display.value = "";
+}
+
+function calculate() {
+  try {
+    if (display.value === "") return;
+
+    const result = Function(
+      `"use strict"; return (${display.value})`
+    )();
+
+    display.value = result;
+  } catch {
+    display.value = "Error";
   }
 }
