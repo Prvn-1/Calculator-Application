@@ -1,4 +1,4 @@
-Project Direct Link - https://praveen-mani-gitzz.github.io/Calculator-Application/Calculattor.html
+Project Direct Link - https://Prvn-1.github.io/Calculator-Application/Calculattor.html
 
 🧮 Calculator Application
 
